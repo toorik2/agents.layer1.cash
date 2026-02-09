@@ -29,6 +29,12 @@
   color: #39FF14;
 }
 
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 /* Desktop inline navigation */
 .desktopNav {
   display: none;
@@ -54,6 +60,17 @@
 .navLinkActive {
   color: #CCD1D6;
   background: #21262D;
+}
+
+.githubLink {
+  display: flex;
+  align-items: center;
+  color: #7D8590;
+  transition: color 0.2s ease;
+}
+
+.githubLink:hover {
+  color: #CCD1D6;
 }
 
 /* Hamburger menu button - mobile only */
