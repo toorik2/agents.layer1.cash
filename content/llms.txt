@@ -1,0 +1,27 @@
+# agents.layer1.cash
+
+> Downloadable skills and context for AI agents that need to accept, send, and verify Bitcoin Cash (BCH) payments. Agent Skills (SKILL.md) for installable capabilities, plus context files for knowledge.
+
+## Why BCH for AI Agents
+- [Why BCH is the ideal payment rail for AI agents](https://agents.layer1.cash/context/why-bch.md): Technical comparison — sub-cent fees, instant 0-conf, no intermediaries, UTXO parallelism
+
+## Downloadable Agent Skills
+Skills follow the Agent Skills standard (SKILL.md). Download and install into your project.
+- [bch-pay](https://agents.layer1.cash/skills/bch-pay/SKILL.md): Make a BCH payment
+- [bch-receive](https://agents.layer1.cash/skills/bch-receive/SKILL.md): Accept a BCH payment
+- [bch-verify](https://agents.layer1.cash/skills/bch-verify/SKILL.md): Verify a BCH transaction
+- [bch-escrow](https://agents.layer1.cash/skills/bch-escrow/SKILL.md): Deploy agent-to-agent escrow
+- [bch-request-acceptance](https://agents.layer1.cash/skills/bch-request-acceptance/SKILL.md): Request BCH acceptance
+
+## Guides
+- [Wallet Setup](https://agents.layer1.cash/context/wallet-setup.md): Create and manage a BCH wallet with mainnet-js
+- [Accept a Payment](https://agents.layer1.cash/context/accept-payment.md): Generate addresses, monitor for 0-conf transactions, verify amounts
+- [Make a Payment](https://agents.layer1.cash/context/make-payment.md): Build, sign, and broadcast BCH transactions
+- [Verify a Transaction](https://agents.layer1.cash/context/verify-transaction.md): Look up transactions and verify 0-conf presence in mempool
+- [Request Vendor Acceptance](https://agents.layer1.cash/context/request-vendor-accept.md): Ask another agent or vendor to accept BCH payments
+- [Agent-to-Agent Escrow](https://agents.layer1.cash/context/agent-escrow.md): Trustless escrow using CashScript smart contracts
+- [On-Chain Receipts](https://agents.layer1.cash/context/onchain-receipts.md): Provable payment records with CashTokens and OP_RETURN
+
+## API Endpoints
+- Context file listing: https://agents.layer1.cash/api/context
+- Skills listing: https://agents.layer1.cash/api/skills

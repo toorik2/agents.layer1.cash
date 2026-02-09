@@ -1,0 +1,40 @@
+pragma cashscript ^0.10.0;
+
+// Escrow contract for trustless agent-to-agent trades on Bitcoin Cash.
+//
+// Two parties: buyer and seller.
+// The buyer locks funds in this contract.
+// Release: both buyer and seller sign to release funds (to any destination).
+// Refund: after timeout, buyer can reclaim funds unilaterally.
+//
+// Usage:
+//   Constructor args:
+//     buyerPk   - compressed public key of the buyer (33 bytes)
+//     sellerPk  - compressed public key of the seller (33 bytes)
+//     timeout   - unix timestamp after which the buyer can refund (int)
+//
+//   Functions:
+//     release(buyerSig, sellerSig) - both parties agree to release funds
+//     refund(buyerSig)             - buyer reclaims after timeout
+
+contract Escrow(
+    pubkey buyerPk,
+    pubkey sellerPk,
+    int timeout
+) {
+    // Happy path: both parties agree to release.
+    // The transaction outputs determine where funds go.
+    // Typically the release transaction sends to the seller's address.
+    function release(sig buyerSig, sig sellerSig) {
+        require(checkSig(buyerSig, buyerPk));
+        require(checkSig(sellerSig, sellerPk));
+    }
+
+    // Dispute path: buyer reclaims after timeout.
+    // Only the buyer's signature is required.
+    // tx.time must be >= timeout (enforced via nLockTime).
+    function refund(sig buyerSig) {
+        require(checkSig(buyerSig, buyerPk));
+        require(tx.time >= timeout);
+    }
+}
