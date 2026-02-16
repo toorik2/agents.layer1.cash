@@ -29,6 +29,22 @@
   text-decoration: underline;
 }
 
+.agentCallout {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  margin-top: 0.75rem;
+}
+
+.agentCallout a {
+  font-family: var(--font-mono);
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.agentCallout a:hover {
+  text-decoration: underline;
+}
+
 /* Sections */
 .section {
   margin-bottom: 2.5rem;

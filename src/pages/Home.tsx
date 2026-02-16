@@ -21,6 +21,12 @@ export default function Home() {
           Downloadable skills and context files for Bitcoin Cash payments.{' '}
           <A href="/why-bch" class={styles.whyLink}>Why BCH?</A>
         </p>
+        <p class={styles.agentCallout}>
+          Point your agent here →{' '}
+          <a href="/llms.txt" target="_blank" rel="noopener noreferrer">
+            https://agents.layer1.cash/llms.txt
+          </a>
+        </p>
       </header>
 
       <section class={styles.section}>
